@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class PobranePliki extends StatefulWidget {
@@ -10,6 +12,10 @@ class PobranePliki extends StatefulWidget {
 class _ProbranceState extends State<PobranePliki> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Center(
+        child: Text('Pobrane Pliki'),
+      ),
+    );
   }
 }

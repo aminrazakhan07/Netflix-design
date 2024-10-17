@@ -1,8 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:net_flix_move/hote_screens/moves_sce.dart';
+import 'package:net_flix_move/hote_screens/ocomin_scr.dart';
+import 'package:net_flix_move/hote_screens/tv_serien.dart';
 import 'package:net_flix_move/widgets/button_widget.dart';
 import 'package:net_flix_move/widgets/card_widget.dart';
+import 'package:net_flix_move/widgets/demo.dart';
 
 // class SearchScreen extends StatelessWidget {
 
@@ -13,11 +17,11 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   int? _selectedButtonIndex;
-  final List<String> hote_Screen = [
-    'Tv Series',
-    'Movies',
-    'Upcoming',
-  ];
+  // final List<String> hote_Screen = [
+  //   'Tv Series',
+  //   'Movies',
+  //   'Upcoming',
+  // ];
 
   @override
   Widget build(BuildContext context) {
@@ -119,16 +123,54 @@ class _SearchScreenState extends State<SearchScreen> {
                         border: OutlineInputBorder(),
                       ),
                     ),
-                    SizedBox(height: 20),
-                    /////////////
-                    CategoryButtons(
-                      categories: hote_Screen,
-                      selectedButtonIndex: _selectedButtonIndex,
-                      onButtonTap: (index) {
-                        setState(() {
-                          _selectedButtonIndex = index;
-                        });
-                      },
+                    SizedBox(height: 30),
+
+                    /////////
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TvSerien()),
+                            );
+                          },
+                          child: Text(
+                            'Tv Series',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        ////////
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MovesScreen()),
+                            );
+                          },
+                          child: Text(
+                            'Movies',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+///////
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => UpComing()),
+                            );
+                          },
+                          child: Text(
+                            'Upcoming',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
                     ),
 
                     SizedBox(height: 20),
@@ -146,51 +188,79 @@ class _SearchScreenState extends State<SearchScreen> {
                     //////// Card Container
                     SizedBox(height: 20),
                     /////////
-                    Column(
-                      children: [
-                        /////// 1 card
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            PopularCard(
-                              imagePath: 'assets/popular1.jpg',
-                              date: '22-10-2024',
-                              rating: '7.5',
-                            ),
+                    Container(
+                      height: 400,
+                      color: Colors.amber,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 8.0, bottom: 8),
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              /////// 1 card
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  PopularCard(
+                                    imagePath: 'assets/popular1.jpg',
+                                    date: '22-10-2024',
+                                    rating: '9.5',
+                                  ),
 
-                            /////// 2 card
+                                  /////// 2 card
 
-                            SizedBox(width: 20),
-                            PopularCard(
-                              imagePath: 'assets/popular2.png',
-                              date: '22-10-2024',
-                              rating: '7.5',
-                            ),
-                          ],
+                                  SizedBox(width: 20),
+                                  PopularCard(
+                                    imagePath: 'assets/popular2.png',
+                                    date: '22-10-2024',
+                                    rating: '7.5',
+                                  ),
+                                ],
+                              ),
+                              /////// 3 card
+
+                              SizedBox(height: 20),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  PopularCard(
+                                    imagePath: 'assets/popular3.jpg',
+                                    date: '22-10-2024',
+                                    rating: '7.5',
+                                  ),
+                                  /////// 4 card
+
+                                  SizedBox(width: 20),
+                                  PopularCard(
+                                    imagePath: 'assets/popular4.jpg',
+                                    date: '22-10-2024',
+                                    rating: '7.5',
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 20),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  PopularCard(
+                                    imagePath: 'assets/popular3.jpg',
+                                    date: '22-10-2024',
+                                    rating: '7.5',
+                                  ),
+                                  /////// 4 card
+
+                                  SizedBox(width: 20),
+                                  PopularCard(
+                                    imagePath: 'assets/popular4.jpg',
+                                    date: '22-10-2024',
+                                    rating: '7.5',
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                        /////// 3 card
-
-                        SizedBox(height: 20),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            PopularCard(
-                              imagePath: 'assets/popular3.jpg',
-                              date: '22-10-2024',
-                              rating: '7.5',
-                            ),
-                            /////// 4 card
-
-                            SizedBox(width: 20),
-                            PopularCard(
-                              imagePath: 'assets/popular4.jpg',
-                              date: '22-10-2024',
-                              rating: '7.5',
-                            ),
-                          ],
-                        ),
-                      ],
-                    )
+                      ),
+                    ),
                   ],
                 ),
               ),

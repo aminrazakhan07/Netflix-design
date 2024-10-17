@@ -21,33 +21,55 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Container(
                     child: Stack(
-                      alignment:
-                          Alignment.center, // Aligns children in the center
+                      alignment: Alignment.bottomLeft,
                       children: [
                         Image(image: AssetImage('assets/popular2.png')),
                         Align(
-                          alignment:
-                              Alignment.topLeft, // Aligns text to the top left
+                          alignment: Alignment.topLeft,
                           child: Padding(
-                            padding:
-                                const EdgeInsets.all(16.0), // Padding for text
-                            child: Text(
-                              'AssassinS',
-                              style: TextStyle(
-                                fontSize: 24,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'AssassinS',
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(height: 15),
+                                GestureDetector(
+                                  onTap: () {},
+                                  child: Container(
+                                    padding: EdgeInsets.symmetric(
+                                        vertical: 8,
+                                        horizontal: 20), // Padding for button
+                                    decoration: BoxDecoration(
+                                      color: Color.fromARGB(
+                                          255, 253, 1, 3), // Button color
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(Icons.play_circle_outlined,
+                                            color: Colors.white),
+                                        SizedBox(width: 15),
+                                        Text(
+                                          'Play',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                        ),
-                        Align(
-                          alignment:
-                              Alignment.center, // Aligns button to the center
-                          child: IconButton(
-                            icon: Icon(Icons.play_arrow,
-                                size: 50, color: Colors.white),
-                            onPressed: () {},
                           ),
                         ),
                       ],
@@ -76,13 +98,44 @@ class HomeScreen extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Image.asset('assets/tv1.jpg', width: 100, height: 100),
-                        Image.asset('assets/tv2.jpg', width: 100, height: 100),
-                        Image.asset('assets/tv3.jpg', width: 100, height: 100),
+                        Column(
+                          children: [
+                            Image.asset('assets/tv1.jpg',
+                                width: 100, height: 100),
+                            Text(
+                              'Tv Darama',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Image.asset('assets/tv2.jpg',
+                                width: 100, height: 100),
+                            Text(
+                              'Tv Darama',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Image.asset('assets/tv3.jpg',
+                                width: 100, height: 100),
+                            Text(
+                              'Tv Darama',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
                 ],
+              ),
+              SizedBox(height: 20),
+              Divider(
+                color: const Color.fromARGB(186, 158, 158, 158),
               ),
               SizedBox(height: 20),
 
@@ -95,9 +148,33 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Image.asset('assets/up1.jpg', width: 100, height: 100),
-                  Image.asset('assets/up2.jpg', width: 100, height: 100),
-                  Image.asset('assets/up3.jpg', width: 100, height: 100),
+                  Column(
+                    children: [
+                      Image.asset('assets/up1.jpg', width: 100, height: 100),
+                      Text(
+                        'Up Coming',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset('assets/up2.jpg', width: 100, height: 100),
+                      Text(
+                        'Up Coming',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset('assets/up3.jpg', width: 100, height: 100),
+                      Text(
+                        'Up Coming',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ],

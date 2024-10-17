@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:net_flix_move/screen/home_scr.dart';
 import 'package:net_flix_move/screen/search_scr.dart';
+import 'package:net_flix_move/welcom_page/login_pge.dart';
 import 'package:net_flix_move/welcom_page/navigat_pge.dart';
+import 'package:net_flix_move/welcom_page/signup_page.dart';
 import 'package:net_flix_move/welcom_page/spleshing.dart';
 
 void main() {

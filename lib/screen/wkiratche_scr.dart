@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class Wkratce extends StatefulWidget {
@@ -10,6 +12,10 @@ class Wkratce extends StatefulWidget {
 class _WkratceState extends State<Wkratce> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Center(
+        child: Text('Wkiratche'),
+      ),
+    );
   }
 }

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:net_flix_move/welcom_page/signup_page.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -10,14 +11,14 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  // void initState() {
-  //   super.initState();
-  //   Timer(Duration(seconds: 5), () {
-  //     Navigator.of(context).pushReplacement(
-  //       MaterialPageRoute(builder: (context) => Navigation_scr()),
-  //     );
-  //   });
-  // }
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3), () {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => SignUp()),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

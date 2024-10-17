@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class Wiecej extends StatefulWidget {
@@ -10,6 +12,10 @@ class Wiecej extends StatefulWidget {
 class _WiecejState extends State<Wiecej> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Center(
+        child: Text('Wicefe'),
+      ),
+    );
   }
 }

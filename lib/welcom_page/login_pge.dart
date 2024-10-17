@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:net_flix_move/screen/home_scr.dart';
+import 'package:net_flix_move/welcom_page/navigat_pge.dart';
 import 'package:net_flix_move/welcom_page/signup_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -51,24 +52,21 @@ class _LoginPageState extends State<LoginPage> {
         child: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.all(32.0),
+              padding: const EdgeInsets.only(left: 15, right: 15),
 
               /////// Opacity Container
               child: Container(
                 decoration: BoxDecoration(
                   color: Color.fromARGB(186, 29, 28, 28),
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(30),
-                    bottomLeft: Radius.circular(30),
-                  ),
                 ),
                 height: size.height / 1.1,
-                width: size.width / 8,
+                width: size.width / 5,
 
                 ///////////////
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    /////////// Logo Heading
                     Padding(
                       padding: const EdgeInsets.only(top: 1),
                       child: Image.asset(
@@ -77,9 +75,11 @@ class _LoginPageState extends State<LoginPage> {
                         height: size.height / 6,
                       ),
                     ),
-                    /////////// Logo Heading
 
                     ///////// Email Field
+                    SizedBox(
+                      height: 1,
+                    ),
                     Column(
                       children: [
                         TextField(
@@ -88,13 +88,11 @@ class _LoginPageState extends State<LoginPage> {
                             labelText: 'Email',
                             labelStyle: TextStyle(color: Colors.black),
                             hintText: 'Enter your email',
-                            hintStyle:
-                                TextStyle(color: Colors.grey), // ہنٹ کا رنگ
-                            filled: true, // بھرے ہوئے پس منظر
-                            fillColor: Colors.white, // بھرے ہوئے رنگ سفید
+                            hintStyle: TextStyle(color: Colors.grey),
+                            filled: true,
+                            fillColor: Colors.white,
                             enabledBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.black), // فعال بارڈر
+                              borderSide: BorderSide(color: Colors.black),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.blue),
@@ -121,28 +119,22 @@ class _LoginPageState extends State<LoginPage> {
                           controller: _passcodController,
                           decoration: InputDecoration(
                             labelText: 'Password',
-                            labelStyle:
-                                TextStyle(color: Colors.black), // لیبل کا رنگ
+                            labelStyle: TextStyle(color: Colors.black),
                             hintText: 'Enter your password',
-                            hintStyle:
-                                TextStyle(color: Colors.grey), // ہنٹ کا رنگ
-                            filled: true, // بھرے ہوئے پس منظر
-                            fillColor: Colors.white, // بھرے ہوئے رنگ سفید
+                            hintStyle: TextStyle(color: Colors.grey),
+                            filled: true,
+                            fillColor: Colors.white,
                             enabledBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.black), // فعال بارڈر
+                              borderSide: BorderSide(color: Colors.black),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.blue), // توجہ دی گئی بارڈر
+                              borderSide: BorderSide(color: Colors.blue),
                             ),
-                            errorText: null, // غلطی کا متن
-                            contentPadding:
-                                EdgeInsets.all(12.0), // اندرونی پیڈنگ
+                            errorText: null,
+                            contentPadding: EdgeInsets.all(12.0),
                           ),
                           obscureText: true,
-                          style: TextStyle(
-                              fontSize: 16, color: Colors.black), // متن کا رنگ
+                          style: TextStyle(fontSize: 16, color: Colors.black),
                           textAlign: TextAlign.left,
                           cursorColor: Colors.blue,
                           cursorWidth: 2.0,
@@ -154,44 +146,37 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
 
-                    Container(),
+                    // Container(),
 
                     /////// On Pressed Button
-                    const SizedBox(height: 15.0),
-                    Padding(
-                      padding:
-                          const EdgeInsets.only(top: 10, left: 10, right: 10),
-
-                      //////////////////////////////////
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          /////
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                            // side: BorderSide(color: Colors.green),
-                          ),
-                          backgroundColor:
-                              const Color.fromARGB(255, 241, 18, 2),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 100, vertical: 10.0),
+                    // const SizedBox(height: 15.0),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        /////
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          // side: BorderSide(color: Colors.green),
                         ),
-                        child: const Text(
-                          'Log in',
-                          style: TextStyle(
-                            fontFamily: 'Bungasai',
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => HomeScreen(),
-                              ));
-                        },
+                        backgroundColor: const Color.fromARGB(255, 224, 0, 0),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 100, vertical: 10.0),
                       ),
+                      child: const Text(
+                        'Log in',
+                        style: TextStyle(
+                          fontFamily: 'Bungasai',
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Navigation_scr(),
+                            ));
+                      },
                     ),
                     ////// Other Text
                     const SizedBox(height: 30.0),
